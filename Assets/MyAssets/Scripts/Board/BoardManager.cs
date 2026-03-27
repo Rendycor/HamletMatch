@@ -51,13 +51,6 @@ public class BoardManager : MonoBehaviour
 
     #region Grid & Visuals
 
-    private Vector3 GridToWorld(Vector2Int pos)
-    {
-        float x = (pos.x - width / 2f + 0.5f) * tileSize;
-        float y = (pos.y - height / 2f + 0.5f) * tileSize;
-        return new Vector3(x, y, 0f);
-    }
-
     private void CreateVisualBoard()
     {
         for (int x = 0; x < width; x++)
@@ -65,11 +58,6 @@ public class BoardManager : MonoBehaviour
             for (int y = 0; y < height; y++)
             {
                 Vector2Int pos = new(x, y);
-
-                // Tile background
-                GameObject tile = Instantiate(tileBackgroundPrefab, GridToWorld(pos), Quaternion.identity, transform);
-                tileVisuals[x, y] = tile;
-
                 SpawnTypeVisual(pos, Grid[x, y].Type);
             }
         }
@@ -85,7 +73,7 @@ public class BoardManager : MonoBehaviour
         GameObject prefab = GetTypePrefab(type);
         if (prefab == null) return;
 
-        GameObject newType = Instantiate(prefab, GridToWorld(pos), Quaternion.identity, transform);
+        GameObject newType = Instantiate(prefab, new Vector3(pos.x,pos.y, 0f), Quaternion.identity, transform);
         TypeInput input = newType.AddComponent<TypeInput>();
         input.GridPos = pos;
 
@@ -217,8 +205,8 @@ public class BoardManager : MonoBehaviour
         GameObject objA = typeVisuals[a.x, a.y];
         GameObject objB = typeVisuals[b.x, b.y];
 
-        Vector3 posA = GridToWorld(a);
-        Vector3 posB = GridToWorld(b);
+        Vector3 posA = new Vector3(a.x, a.y, 0f);
+        Vector3 posB = new Vector3(b.x, b.y, 0f);
 
         Sequence seq = DOTween.Sequence();
 
@@ -348,7 +336,7 @@ public class BoardManager : MonoBehaviour
                 GameObject obj = typeVisuals[x, y];
                 if (obj == null) continue;
 
-                Vector3 target = GridToWorld(new Vector2Int(x, y));
+                Vector3 target = new Vector3(x, y, 0f);
                 float distance = Vector3.Distance(obj.transform.position, target);
                 float delay = Mathf.Clamp(distance * 0.03f, 0f, 0.08f);
                 float duration = Mathf.Clamp(distance * 0.08f, 0.08f, 0.22f);
@@ -377,8 +365,8 @@ public class BoardManager : MonoBehaviour
                 if (prefab == null) continue;
 
                 Vector2Int pos = new Vector2Int(x, y);
-                Vector3 spawnPos = GridToWorld(new Vector2Int(x, height + 2));
-                Vector3 targetPos = GridToWorld(pos);
+                Vector3 spawnPos = new Vector3(x, height +2, 0f);;
+                Vector3 targetPos = new Vector3(pos.x, pos.y, 0f);
 
                 GameObject type = Instantiate(prefab, spawnPos, Quaternion.identity, transform);
                 type.AddComponent<TypeInput>().GridPos = pos;
