@@ -6,7 +6,7 @@ using System.Linq;
 using DG.Tweening;
 using System.Collections;
 
-public class BoardManager : MonoBehaviour
+public class NpcBoardManager : MonoBehaviour
 {
     [Header("Visuals")]
     [SerializeField] private int width = 8;
