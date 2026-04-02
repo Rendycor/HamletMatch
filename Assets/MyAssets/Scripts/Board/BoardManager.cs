@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using DG.Tweening;
 using System.Collections;
+using TMPro;
 
 public class BoardManager : MonoBehaviour
 {
@@ -25,11 +26,16 @@ public class BoardManager : MonoBehaviour
     [SerializeField] private float fallDelayPerColumn = 0.01f;
     [SerializeField] private Ease fallEase = Ease.OutQuad;
     [Header("Resource Counters")]
-    [SerializeField] private int MoneyCounter = 0;
-    [SerializeField] private int WoodCounter = 0;
     [SerializeField] private int FoodCounter = 0;
+    [SerializeField] private TMP_Text FoodCounterText;
     [SerializeField] private int MetalCounter = 0;
+    [SerializeField] private TMP_Text MetalCounterText;
+    [SerializeField] private int MoneyCounter = 0;
+    [SerializeField] private TMP_Text MoneyCounterText;
     [SerializeField] private int StoneCounter = 0;
+    [SerializeField] private TMP_Text StoneCounterText;
+    [SerializeField] private int WoodCounter = 0;
+    [SerializeField] private TMP_Text WoodCounterText;
 
 
     private Dictionary<TileType, HashSet<Vector2Int>> typePositions = new();
@@ -55,7 +61,7 @@ public class BoardManager : MonoBehaviour
     {
         float x = (pos.x - width / 2f + 0.5f) * tileSize;
         float y = (pos.y - height / 2f + 0.5f) * tileSize;
-        return this.transform.position+ new Vector3(x, y, 0f);
+        return transform.position+ new Vector3(x, y, 0f);
     }
 
     private void CreateVisualBoard()
@@ -67,6 +73,7 @@ public class BoardManager : MonoBehaviour
                 Vector2Int pos = new(x, y);
 
                 GameObject tile = Instantiate(tileBackgroundPrefab, GridToWorld(pos), Quaternion.identity, transform);
+                tile.transform.localScale /= width*height-width-height;
                 tileVisuals[x, y] = tile;
 
                 SpawnTypeVisual(pos, Grid[x, y].Type);
@@ -464,18 +471,23 @@ public class BoardManager : MonoBehaviour
         {
             case TileType.Money:
                 MoneyCounter++;
+                MoneyCounterText.text = MoneyCounter.ToString();
                 break;
             case TileType.Wood:
                 WoodCounter++;
+                WoodCounterText.text = WoodCounter.ToString();
                 break;
             case TileType.Food:
                 FoodCounter++;
+                FoodCounterText.text = FoodCounter.ToString();
                 break;
             case TileType.Metal:
                 MetalCounter++;
+                MetalCounterText.text = MetalCounter.ToString();
                 break;
             case TileType.Stone:
                 StoneCounter++;
+                StoneCounterText.text = StoneCounter.ToString();
                 break;
             default:
                 break;
