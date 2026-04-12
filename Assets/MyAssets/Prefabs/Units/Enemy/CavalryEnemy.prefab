@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &110726171909084412
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -682
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 115511535004812365, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 706910716026157398, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_Name
+      value: CavalryEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3873251890504199719, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: die
+      value: Cavalry_Enemy_Die
+      objectReference: {fileID: 0}
+    - target: {fileID: 3873251890504199719, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: idle
+      value: Cavalry_Enemy_Idle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3873251890504199719, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: team
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3873251890504199719, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: walk
+      value: Cavalry_Enemy_Walk
+      objectReference: {fileID: 0}
+    - target: {fileID: 3873251890504199719, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: attack
+      value: Cavalry_Enemy_Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102584164206166554, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 759a96816bac7b64e8b86dcd25643160, type: 2}
+    - target: {fileID: 8740727896984479360, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740727896984479360, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7709979040117600524, guid: 26806651016c6064e99629397f85ccdf, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}

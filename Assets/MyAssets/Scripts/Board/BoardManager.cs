@@ -25,18 +25,8 @@ public class BoardManager : MonoBehaviour
     [SerializeField] private float fallDelayPerTile = 0.005f;
     [SerializeField] private float fallDelayPerColumn = 0.01f;
     [SerializeField] private Ease fallEase = Ease.OutQuad;
-    [Header("Resource Counters")]
-    [SerializeField] private int FoodCounter = 0;
-    [SerializeField] private TMP_Text FoodCounterText;
-    [SerializeField] private int MetalCounter = 0;
-    [SerializeField] private TMP_Text MetalCounterText;
-    [SerializeField] private int MoneyCounter = 0;
-    [SerializeField] private TMP_Text MoneyCounterText;
-    [SerializeField] private int StoneCounter = 0;
-    [SerializeField] private TMP_Text StoneCounterText;
-    [SerializeField] private int WoodCounter = 0;
-    [SerializeField] private TMP_Text WoodCounterText;
-
+    [Header("Resource script")]
+    [SerializeField] private ResourceCounterManager resourceCounterManager;
 
     private Dictionary<TileType, HashSet<Vector2Int>> typePositions = new();
     private GameObject[,] tileVisuals;
@@ -281,7 +271,7 @@ public class BoardManager : MonoBehaviour
 
             foreach (var pos in matches)
             {
-                UpCounterByType(GetTileType(pos));
+                resourceCounterManager.UpCounterByType(GetTileType(pos));
                 SetTileType(pos, TileType.Empty);
             }
                 
@@ -460,38 +450,6 @@ public class BoardManager : MonoBehaviour
         CheckVerticalMatches(groups);
     
         return groups.Count > 0;
-    }
-    #endregion
-    
-    #region Counter Logic
-
-    private void UpCounterByType(TileType type)
-    {
-        switch (type)
-        {
-            case TileType.Money:
-                MoneyCounter++;
-                MoneyCounterText.text = MoneyCounter.ToString();
-                break;
-            case TileType.Wood:
-                WoodCounter++;
-                WoodCounterText.text = WoodCounter.ToString();
-                break;
-            case TileType.Food:
-                FoodCounter++;
-                FoodCounterText.text = FoodCounter.ToString();
-                break;
-            case TileType.Metal:
-                MetalCounter++;
-                MetalCounterText.text = MetalCounter.ToString();
-                break;
-            case TileType.Stone:
-                StoneCounter++;
-                StoneCounterText.text = StoneCounter.ToString();
-                break;
-            default:
-                break;
-        }
     }
     #endregion
 }
