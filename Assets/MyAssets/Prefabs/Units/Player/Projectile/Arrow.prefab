@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8893491806238237138}
   - component: {fileID: 8186612883704926811}
   - component: {fileID: 1518959106399874499}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,8 +82,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1711598139
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1544377788986270335, guid: 1fc767da2a7e9e64f88b912dc9a7329b, type: 3}

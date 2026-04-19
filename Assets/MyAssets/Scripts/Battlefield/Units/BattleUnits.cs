@@ -315,7 +315,7 @@ namespace BattleUnits
         protected abstract void FindTarget();
         public abstract void OnAttackAnimationFinished();
     }
-
+    #region RangedUnit
     public abstract class RangedUnit : BattleUnit
     {
         [Header("Ranged")]
@@ -364,7 +364,8 @@ namespace BattleUnits
             script.SetDamage(CalculateDamage(targetUnit.UnitType));
         }
     }
-
+    #endregion
+    #region MeleeUnit
 
     public abstract class MeleeUnit : BattleUnit
     {
@@ -409,4 +410,5 @@ namespace BattleUnits
             targetUnit.TakeDamageOrDie(CalculateDamage(targetUnit.UnitType));
         }
     }
+    #endregion
 }
