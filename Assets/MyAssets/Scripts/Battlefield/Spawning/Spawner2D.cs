@@ -13,7 +13,7 @@ public class Spawner2D : MonoBehaviour
     public LayerMask blockingLayers;
     private Queue<GameObject> spawnQueue = new Queue<GameObject>();
     
-    private float timer;
+    protected float timer;
 
     void Update()
     {
@@ -72,18 +72,6 @@ public class Spawner2D : MonoBehaviour
         }
 
         return col.bounds.size;
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        if (spawnPoint == null || spawnQueue.Count == 0)
-            return;
-
-        GameObject nextPrefab = spawnQueue.Peek();
-        Vector2 size = GetPrefabSize(nextPrefab);
-
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(spawnPoint.position, size);
     }
 }
 

@@ -20,11 +20,6 @@ public class BoardManager : MonoBehaviour
     [SerializeField] private float swapDuration = 0.15f;
     [SerializeField] private Ease swapEase = Ease.InOutQuad;
 
-    [Header("Fall Stagger")]
-    [SerializeField] private float fallDuration = 0.12f;
-    [SerializeField] private float fallDelayPerTile = 0.005f;
-    [SerializeField] private float fallDelayPerColumn = 0.01f;
-    [SerializeField] private Ease fallEase = Ease.OutQuad;
     [Header("Resource script")]
     [SerializeField] private ResourceCounterManager resourceCounterManager;
 
