@@ -149,6 +149,7 @@ public class ResourceCounterManager : MonoBehaviour
     {
         if(moneyCounter > 0)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClickSound);
             moneyCounter--;
             NumberChangePopUp.Instance.ShowMessage(-1, moneyPopUpText);
             moneyCounterText.text = moneyCounter.ToString();
@@ -162,6 +163,7 @@ public class ResourceCounterManager : MonoBehaviour
     {
         if(woodCounter >= woodRate)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClickSound);
             moneyCounter++;
             NumberChangePopUp.Instance.ShowMessage(1, moneyPopUpText);
             moneyCounterText.text = moneyCounter.ToString();
@@ -175,6 +177,7 @@ public class ResourceCounterManager : MonoBehaviour
     {
         if(moneyCounter > 0)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClickSound);
             moneyCounter--;
             NumberChangePopUp.Instance.ShowMessage(-1, moneyPopUpText);
             moneyCounterText.text = moneyCounter.ToString();
@@ -188,6 +191,7 @@ public class ResourceCounterManager : MonoBehaviour
     {
         if(foodCounter >= foodRate)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClickSound);
             moneyCounter++;
             NumberChangePopUp.Instance.ShowMessage(1, moneyPopUpText);
             moneyCounterText.text = moneyCounter.ToString();
@@ -201,6 +205,7 @@ public class ResourceCounterManager : MonoBehaviour
     {
         if(moneyCounter > 0)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClickSound);
             moneyCounter--;
             NumberChangePopUp.Instance.ShowMessage(-1, moneyPopUpText);
             moneyCounterText.text = moneyCounter.ToString();
@@ -214,6 +219,7 @@ public class ResourceCounterManager : MonoBehaviour
     {
         if(metalCounter >= metalRate)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClickSound);
             moneyCounter++;
             NumberChangePopUp.Instance.ShowMessage(1, moneyPopUpText);
             moneyCounterText.text = moneyCounter.ToString();
@@ -227,6 +233,7 @@ public class ResourceCounterManager : MonoBehaviour
     {
         if(moneyCounter > 0)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClickSound);
             moneyCounter--;
             NumberChangePopUp.Instance.ShowMessage(-1, moneyPopUpText);
             moneyCounterText.text = moneyCounter.ToString();
@@ -240,6 +247,7 @@ public class ResourceCounterManager : MonoBehaviour
     {
         if(stoneCounter >= stoneRate)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClickSound);
             moneyCounter++;
             NumberChangePopUp.Instance.ShowMessage(1, moneyPopUpText);
             moneyCounterText.text = moneyCounter.ToString();
@@ -267,6 +275,7 @@ public class ResourceCounterManager : MonoBehaviour
     {
         if(foodCounter >= archerFoodCost && woodCounter >= archerWoodCost && metalCounter >= archerMetalCost)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClickSound);
             foodCounter -= archerFoodCost;
             NumberChangePopUp.Instance.ShowMessage(-archerFoodCost, foodPopUpText);
             foodCounterText.text = foodCounter.ToString();
@@ -287,6 +296,7 @@ public class ResourceCounterManager : MonoBehaviour
     {
         if(foodCounter >= cavalryFoodCost && woodCounter >= cavalryWoodCost && metalCounter >= cavalryMetalCost)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClickSound);
             foodCounter -= cavalryFoodCost;
             NumberChangePopUp.Instance.ShowMessage(-cavalryFoodCost, foodPopUpText);
             foodCounterText.text = foodCounter.ToString();
@@ -307,6 +317,7 @@ public class ResourceCounterManager : MonoBehaviour
     {
         if(foodCounter >= spearmanFoodCost && woodCounter >= spearmanWoodCost && metalCounter >= spearmanMetalCost)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClickSound);
             foodCounter -= spearmanFoodCost;
             NumberChangePopUp.Instance.ShowMessage(-spearmanFoodCost, foodPopUpText);
             foodCounterText.text = foodCounter.ToString();
