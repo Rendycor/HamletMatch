@@ -296,7 +296,7 @@ public class BoardManager : MonoBehaviour
             if (obj == null) continue;
             seq.Join(obj.transform.DOScale(0f, 0.12f).SetEase(Ease.InBack));
         }
-
+        SoundManager.Instance.PlaySound2D("ResourceCollected");
         return seq;
     }
 

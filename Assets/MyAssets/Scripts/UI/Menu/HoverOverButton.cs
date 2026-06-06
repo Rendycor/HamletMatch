@@ -7,6 +7,7 @@ public class HoverOverButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        SoundManager.Instance.PlaySound2D("Hover");
         hoverImage.SetActive(true);
     }
     public void OnPointerExit(PointerEventData eventData)

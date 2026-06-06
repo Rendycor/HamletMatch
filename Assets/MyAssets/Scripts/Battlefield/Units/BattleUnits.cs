@@ -240,7 +240,8 @@ namespace BattleUnits
             {
                 if (flashRoutine != null)
                     StopCoroutine(flashRoutine);
-
+                
+                SoundManager.Instance.PlaySound2D("Hit");
                 flashRoutine = StartCoroutine(FlashRedRoutine());
             }
             else
@@ -275,7 +276,7 @@ namespace BattleUnits
             {
                 transform.SetParent(deathParent.transform, true);
             }
-
+            SoundManager.Instance.PlaySound2D("Death");
             animator.Play(die);
 
             StartCoroutine(FadeOutRoutine());
