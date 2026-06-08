@@ -11,17 +11,20 @@ public class ResourceCounterManager : MonoBehaviour
     [SerializeField] int foodCounter;
     [SerializeField] int metalCounter;
     [SerializeField] int stoneCounter;
+    [SerializeField] int populationCounter;
     [SerializeField] TMP_Text moneyCounterText;
     [SerializeField] TMP_Text woodCounterText;
     [SerializeField] TMP_Text foodCounterText;
     [SerializeField] TMP_Text metalCounterText;
     [SerializeField] TMP_Text stoneCounterText;
+    [SerializeField] TMP_Text populationCounterText;
     [Header("PopUpLabels")]
     [SerializeField] TMP_Text moneyPopUpText;
     [SerializeField] TMP_Text woodPopUpText;
     [SerializeField] TMP_Text foodPopUpText;
     [SerializeField] TMP_Text metalPopUpText;
     [SerializeField] TMP_Text stonePopUpText;
+    [SerializeField] TMP_Text populationPopUpText;
     [Header("ExchangeRates")]
     [SerializeField] int woodRate;
     [SerializeField] int foodRate;
@@ -50,6 +53,8 @@ public class ResourceCounterManager : MonoBehaviour
     [SerializeField] TMP_Text archerMetalCostText;
     [SerializeField] int archerWoodCost;
     [SerializeField] TMP_Text archerWoodCostText;
+    [SerializeField] int archerPopulationCost;
+    [SerializeField] TMP_Text archerPopulationCostText;
     [Header("Cavalry")]
     [SerializeField] Button TrainCavalryButton;
     [SerializeField] int cavalryFoodCost;
@@ -58,6 +63,8 @@ public class ResourceCounterManager : MonoBehaviour
     [SerializeField] TMP_Text cavalryMetalCostText;
     [SerializeField] int cavalryWoodCost;
     [SerializeField] TMP_Text cavalryWoodCostText;
+    [SerializeField] int cavalryPopulationCost;
+    [SerializeField] TMP_Text cavalryPopulationCostText;
     [Header("SpearMan")]
     [SerializeField] Button TrainSpearManButton;
     [SerializeField] int spearmanFoodCost;
@@ -66,6 +73,13 @@ public class ResourceCounterManager : MonoBehaviour
     [SerializeField] TMP_Text spearmanMetalCostText;
     [SerializeField] int spearmanWoodCost;
     [SerializeField] TMP_Text spearmanWoodCostText;
+    [SerializeField] int spearmanPopulationCost;
+    [SerializeField] TMP_Text spearmanPopulationCostText;
+    [Header("House")]
+    [SerializeField] Button BuildHouseButton;
+    [SerializeField] int houseStoneCost;
+    [SerializeField] TMP_Text houseStoneCostText;
+    [SerializeField] int populationGain;
     private Spawner2D playerUnitSpawnScript;
 
     private void Awake()
@@ -105,9 +119,10 @@ public class ResourceCounterManager : MonoBehaviour
         sellMetalButton.interactable = metalCounter >= metalRate;
         sellStoneButton.interactable = stoneCounter >= stoneRate;
 
-        TrainArcherButton.interactable = foodCounter >= archerFoodCost && woodCounter >= archerWoodCost && metalCounter >= archerMetalCost;
-        TrainCavalryButton.interactable =foodCounter >= cavalryFoodCost && woodCounter >= cavalryWoodCost && metalCounter >= cavalryMetalCost;
-        TrainSpearManButton.interactable = foodCounter >= spearmanFoodCost && woodCounter >= spearmanWoodCost && metalCounter >= spearmanMetalCost;
+        TrainArcherButton.interactable = foodCounter >= archerFoodCost && woodCounter >= archerWoodCost && metalCounter >= archerMetalCost && populationCounter >= archerPopulationCost;
+        TrainCavalryButton.interactable =foodCounter >= cavalryFoodCost && woodCounter >= cavalryWoodCost && metalCounter >= cavalryMetalCost && populationCounter >= cavalryPopulationCost;
+        TrainSpearManButton.interactable = foodCounter >= spearmanFoodCost && woodCounter >= spearmanWoodCost && metalCounter >= spearmanMetalCost && populationCounter >= spearmanPopulationCost;
+        BuildHouseButton.interactable = stoneCounter >= houseStoneCost;
     }
 
     public void UpCounterByType(TileType type)
@@ -278,13 +293,15 @@ public class ResourceCounterManager : MonoBehaviour
         spearmanFoodCostText.text = spearmanFoodCost.ToString();
         spearmanMetalCostText.text = spearmanMetalCost.ToString();
         spearmanWoodCostText.text = spearmanWoodCost.ToString();
+        houseStoneCostText.text = houseStoneCost.ToString();
     }
     public void TrainArcher()
     {
-        if(foodCounter >= archerFoodCost && woodCounter >= archerWoodCost && metalCounter >= archerMetalCost)
+        if(foodCounter >= archerFoodCost && woodCounter >= archerWoodCost && metalCounter >= archerMetalCost && populationCounter >= archerPopulationCost)
         {
             SoundManager.Instance.PlaySound2D("Click");
             SoundManager.Instance.PlaySound2D("Coin");
+
             foodCounter -= archerFoodCost;
             NumberChangePopUp.Instance.ShowMessage(-archerFoodCost, foodPopUpText);
             foodCounterText.text = foodCounter.ToString();
@@ -297,16 +314,21 @@ public class ResourceCounterManager : MonoBehaviour
             NumberChangePopUp.Instance.ShowMessage(-archerMetalCost, metalPopUpText);
             metalCounterText.text = metalCounter.ToString();
 
+            populationCounter -= archerPopulationCost;
+            NumberChangePopUp.Instance.ShowMessage(-archerPopulationCost, populationPopUpText);
+            populationCounterText.text = populationCounter.ToString();
+
             playerUnitSpawnScript.EnqueueUnit(BattleUnitsEnum.Archer);
         }
         UpdateButtons();
     }
-        public void TrainCavalry()
+    public void TrainCavalry()
     {
-        if(foodCounter >= cavalryFoodCost && woodCounter >= cavalryWoodCost && metalCounter >= cavalryMetalCost)
+        if(foodCounter >= cavalryFoodCost && woodCounter >= cavalryWoodCost && metalCounter >= cavalryMetalCost && populationCounter >= cavalryPopulationCost)
         {
             SoundManager.Instance.PlaySound2D("Click");
             SoundManager.Instance.PlaySound2D("Coin");
+
             foodCounter -= cavalryFoodCost;
             NumberChangePopUp.Instance.ShowMessage(-cavalryFoodCost, foodPopUpText);
             foodCounterText.text = foodCounter.ToString();
@@ -319,16 +341,21 @@ public class ResourceCounterManager : MonoBehaviour
             NumberChangePopUp.Instance.ShowMessage(-cavalryMetalCost, metalPopUpText);
             metalCounterText.text = metalCounter.ToString();
 
+            populationCounter -= cavalryPopulationCost;
+            NumberChangePopUp.Instance.ShowMessage(-cavalryPopulationCost, populationPopUpText);
+            populationCounterText.text = populationCounter.ToString();
+
             playerUnitSpawnScript.EnqueueUnit(BattleUnitsEnum.Cavalry);
         }
         UpdateButtons();
     }
-        public void TrainSpearman()
+    public void TrainSpearman()
     {
-        if(foodCounter >= spearmanFoodCost && woodCounter >= spearmanWoodCost && metalCounter >= spearmanMetalCost)
+        if(foodCounter >= spearmanFoodCost && woodCounter >= spearmanWoodCost && metalCounter >= spearmanMetalCost &&  populationCounter >= spearmanPopulationCost)
         {
             SoundManager.Instance.PlaySound2D("Click");
             SoundManager.Instance.PlaySound2D("Coin");
+
             foodCounter -= spearmanFoodCost;
             NumberChangePopUp.Instance.ShowMessage(-spearmanFoodCost, foodPopUpText);
             foodCounterText.text = foodCounter.ToString();
@@ -341,7 +368,28 @@ public class ResourceCounterManager : MonoBehaviour
             NumberChangePopUp.Instance.ShowMessage(-spearmanMetalCost, metalPopUpText);
             metalCounterText.text = metalCounter.ToString();
 
+            populationCounter -= spearmanPopulationCost;
+            NumberChangePopUp.Instance.ShowMessage(-spearmanPopulationCost, populationPopUpText);
+            populationCounterText.text = populationCounter.ToString();
+
             playerUnitSpawnScript.EnqueueUnit(BattleUnitsEnum.Spearmen);
+        }
+        UpdateButtons();
+    }
+    public void BuildHouse()
+    {
+        if(stoneCounter >= houseStoneCost)
+        {
+            SoundManager.Instance.PlaySound2D("Click");
+            SoundManager.Instance.PlaySound2D("Coin");
+
+            stoneCounter -= houseStoneCost;
+            NumberChangePopUp.Instance.ShowMessage(-houseStoneCost, stonePopUpText);
+            stoneCounterText.text = stoneCounter.ToString();
+
+            populationCounter += populationGain;
+            NumberChangePopUp.Instance.ShowMessage(+populationGain, populationPopUpText);
+            populationCounterText.text = populationCounter.ToString();
         }
         UpdateButtons();
     }

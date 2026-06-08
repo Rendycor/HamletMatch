@@ -1600,7 +1600,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 9025280858613395494, guid: ae2ec517eff5f6d4d8588bb4bb41e081, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae2ec517eff5f6d4d8588bb4bb41e081, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4111,6 +4111,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 294e16017feb263499638dc7c886d3e6, type: 3}
   - groupID: ResourceCollected
     clip: {fileID: 8300000, guid: a643fef0d0316a34ea9d0585aedf14c8, type: 3}
+  - groupID: BowShot
+    clip: {fileID: 8300000, guid: 592d883490536ab4995fadf451929075, type: 3}
 --- !u!1 &1729808447
 GameObject:
   m_ObjectHideFlags: 0
@@ -4353,7 +4355,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 9025280858613395494, guid: ae2ec517eff5f6d4d8588bb4bb41e081, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae2ec517eff5f6d4d8588bb4bb41e081, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

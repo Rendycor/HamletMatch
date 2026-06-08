@@ -12,6 +12,7 @@ public class EnemyResourceManager : MonoBehaviour
 
     [SerializeField] float timerForOneUpResources;
     [Header("UnitCosts")]
+    [SerializeField] int stoneCost;
     [Header("Archer")]
     [SerializeField] int archerFoodCost;
     [SerializeField] int archerMetalCost;
@@ -24,6 +25,10 @@ public class EnemyResourceManager : MonoBehaviour
     [SerializeField] int CavalryFoodCost;
     [SerializeField] int CavalryMetalCost;
     [SerializeField] int CavalryWoodCost;
+    
+
+
+
 
 
 
@@ -55,7 +60,7 @@ public class EnemyResourceManager : MonoBehaviour
     }
     public bool TryTrainArcher()
     {
-        if(foodCounter >= archerFoodCost && woodCounter >= archerWoodCost && metalCounter >= archerMetalCost)
+        if(stoneCounter >= stoneCost && foodCounter >= archerFoodCost && woodCounter >= archerWoodCost && metalCounter >= archerMetalCost)
         {
             foodCounter -= archerFoodCost;
             woodCounter -= archerWoodCost;
@@ -66,7 +71,7 @@ public class EnemyResourceManager : MonoBehaviour
     }
     public bool TryTrainSpearman()
     {
-        if(foodCounter >= SpearmanFoodCost && woodCounter >= SpearmanWoodCost && metalCounter >= SpearmanMetalCost)
+        if(stoneCounter >= stoneCost && foodCounter >= SpearmanFoodCost && woodCounter >= SpearmanWoodCost && metalCounter >= SpearmanMetalCost)
         {
             foodCounter -= SpearmanFoodCost;
             woodCounter -= SpearmanWoodCost;
@@ -77,7 +82,7 @@ public class EnemyResourceManager : MonoBehaviour
     }
     public bool TryTrainCavalry()
     {
-        if(foodCounter >= CavalryFoodCost && woodCounter >= CavalryWoodCost && metalCounter >= CavalryMetalCost)
+        if(stoneCounter >= stoneCost && foodCounter >= CavalryFoodCost && woodCounter >= CavalryWoodCost && metalCounter >= CavalryMetalCost)
         {
             foodCounter -= CavalryFoodCost;
             woodCounter -= CavalryWoodCost;

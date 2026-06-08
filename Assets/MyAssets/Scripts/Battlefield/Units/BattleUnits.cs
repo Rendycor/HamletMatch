@@ -353,7 +353,10 @@ namespace BattleUnits
             if (targetTransform != null)
                 targetUnit = targetTransform.GetComponent<BattleUnit>();
         }
-
+        public void OnStartBowDrawAnimation()
+        {
+            SoundManager.Instance.PlaySound2D("BowShot");
+        }
         public override void OnAttackAnimationFinished()
         {
             if (!IsTargetValid()) return;
