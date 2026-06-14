@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7575945541162612324}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 903326867291714360}
   - component: {fileID: 6540929996157686206}
   - component: {fileID: 6878464265444436715}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: SpearMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}

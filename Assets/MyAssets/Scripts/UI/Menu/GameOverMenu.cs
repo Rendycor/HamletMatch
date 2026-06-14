@@ -7,10 +7,15 @@ public class GameOverMenu : MonoBehaviour
     {
         SceneManager.LoadScene("MatchScene");
         MusicManager.Instance.PlayMusic("Battle");
+        ContinueTime();
     }
     public void BackToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
         MusicManager.Instance.PlayMusic("Menu");
+        ContinueTime();
+    }
+    private void ContinueTime(){
+        Time.timeScale = 1f;
     }
 }

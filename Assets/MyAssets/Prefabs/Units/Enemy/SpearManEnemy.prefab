@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 804194165217696146, guid: f07fd4d7cf7dd984aa1d07bb713bb061, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 903326867291714360, guid: f07fd4d7cf7dd984aa1d07bb713bb061, type: 3}
       propertyPath: m_Size.x
       value: 0.14420721
@@ -23,6 +27,10 @@ PrefabInstance:
     - target: {fileID: 6511963723608503976, guid: f07fd4d7cf7dd984aa1d07bb713bb061, type: 3}
       propertyPath: m_Name
       value: SpearManEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6511963723608503976, guid: f07fd4d7cf7dd984aa1d07bb713bb061, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6878464265444436715, guid: f07fd4d7cf7dd984aa1d07bb713bb061, type: 3}
       propertyPath: die

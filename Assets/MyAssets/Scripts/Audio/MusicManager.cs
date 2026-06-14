@@ -28,25 +28,27 @@ public class MusicManager : MonoBehaviour
         StartCoroutine(AnimateMusicCrossfade(musicLibrary.GetClipFromName(trackName), fadeDuration));
     }
  
+    IEnumerator Fade(float from, float to, float duration)
+    {
+        float startTime = Time.unscaledTime;
+    
+        while (Time.unscaledTime < startTime + duration)
+        {
+            float t = (Time.unscaledTime - startTime) / duration;
+            musicSource.volume = Mathf.Lerp(from, to, t);
+            yield return null;
+        }
+    
+        musicSource.volume = to;
+    }
+    
     IEnumerator AnimateMusicCrossfade(AudioClip nextTrack, float fadeDuration = 0.5f)
     {
-        float percent = 0;
-        while (percent < 1)
-        {
-            percent += Time.deltaTime * 1 / fadeDuration;
-            musicSource.volume = Mathf.Lerp(1f, 0, percent);
-            yield return null;
-        }
- 
+        yield return Fade(1f, 0f, fadeDuration);
+    
         musicSource.clip = nextTrack;
         musicSource.Play();
- 
-        percent = 0;
-        while (percent < 1)
-        {
-            percent += Time.deltaTime * 1 / fadeDuration;
-            musicSource.volume = Mathf.Lerp(0, 1f, percent);
-            yield return null;
-        }
+    
+        yield return Fade(0f, 1f, fadeDuration);
     }
 }

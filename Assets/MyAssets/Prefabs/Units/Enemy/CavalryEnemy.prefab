@@ -92,6 +92,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CavalryEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 706910716026157398, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3873251890504199719, guid: bcc42f857e3bb9240935ec7605bca429, type: 3}
       propertyPath: die
       value: Cavalry_Enemy_Die

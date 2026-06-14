@@ -4113,6 +4113,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a643fef0d0316a34ea9d0585aedf14c8, type: 3}
   - groupID: BowShot
     clip: {fileID: 8300000, guid: 592d883490536ab4995fadf451929075, type: 3}
+  - groupID: Door
+    clip: {fileID: 8300000, guid: 0f6fb4d09d8be5c41bda47fb845f7e1e, type: 3}
 --- !u!1 &1729808447
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ae2ec517eff5f6d4d8588bb4bb41e081
+guid: 70d1b63d170e5554bb9d336a64921d10
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9025280858613395494
-    second: castle2_0
+      213: 2157920489558371778
+    second: FancyHpBar_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: castle2_0
+      name: FancyHpBar_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
+        width: 50
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 620b8c77f1d304d70800000000000000
-      internalID: 9025280858613395494
+      spriteID: 2cde9a9804972fd10800000000000000
+      internalID: 2157920489558371778
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      castle2_0: 9025280858613395494
+      FancyHpBar_0: 2157920489558371778
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

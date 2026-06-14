@@ -120,9 +120,17 @@ PrefabInstance:
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 126871116661976757, guid: cd7db49041450bc43bf1db4470e8de5e, type: 3}
+    - target: {fileID: 4010031440114338653, guid: fb57fad04443ca144bdde7367abf2d65, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5805564301089649381, guid: fb57fad04443ca144bdde7367abf2d65, type: 3}
       propertyPath: m_Name
       value: ArcherEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805564301089649381, guid: fb57fad04443ca144bdde7367abf2d65, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6713673054187025911, guid: fb57fad04443ca144bdde7367abf2d65, type: 3}
       propertyPath: m_AnchoredPosition.x
