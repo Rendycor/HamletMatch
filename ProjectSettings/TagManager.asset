@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Graveyard
+  - PlayerTeam
+  - AiTeam
   layers:
   - Default
   - TransparentFX
@@ -12,9 +15,9 @@ TagManager:
   - Water
   - UI
   - Types
-  - 
-  - 
-  - 
+  - EndScreen
+  - PlayerUnit
+  - EnemyUnit
   - 
   - 
   - 
@@ -49,6 +52,9 @@ TagManager:
     locked: 0
   - name: Effects
     uniqueID: 2050514121
+    locked: 0
+  - name: UI
+    uniqueID: 2330539883
     locked: 0
   m_RenderingLayers:
   - Default
